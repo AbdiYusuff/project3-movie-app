@@ -19,6 +19,8 @@ import java.util.List;
 public class MovieController {
     @Autowired
     private BestMovieService bestMovieService;
+    @Autowired
+    private SessionFactory sessionFactory;
 
     @RequestMapping("/")
     public  String getIndexPage(){
@@ -86,8 +88,6 @@ public class MovieController {
         return "voteForBestMovie";
     }
 
-    @Autowired
-    private SessionFactory sessionFactory;
     @RequestMapping("/addMovieForm")
     public String addMovieForm() {
         return "addMovie";
